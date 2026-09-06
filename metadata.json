@@ -1,0 +1,7 @@
+{
+  "name": "Apex Pest Solutions",
+  "description": "Safe, fast, and reliable pest control solutions for residential and commercial properties with expert inspection and guaranteed protection.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
