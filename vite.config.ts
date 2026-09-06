@@ -4,8 +4,15 @@ import path from 'path';
 import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
+  // If running in GitHub Actions, automatically detect repository name (e.g. /Apex-Pest-Solutions/)
+  const ghRepo = process.env.GITHUB_REPOSITORY
+    ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}/`
+    : '/Apex-Pest-Solutions/';
+
+  const base = process.env.BASE_PATH || (process.env.GITHUB_ACTIONS ? ghRepo : './');
+
   return {
-    base: './',
+    base,
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
